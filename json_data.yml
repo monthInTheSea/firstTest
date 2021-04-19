@@ -1,0 +1,10 @@
+{ 
+  "errcode": 0,
+  "errmsg": "ok", 
+  "department": [
+    { "id": 1, "name": "宁波君发自动化", "parentid": 0, "order": 100000000 },
+    { "id": 2, "name": "西安alis", "parentid": 1, "order": 1, "name_en": "Alis" }, 
+    { "id": 3, "name": "西安alex", "parentid": 1, "order": 1, "name_en": "Alex" },
+    { "id": 4, "name": "西安liy", "parentid": 1, "order": 0 },
+    { "id": 5, "name": "abc", "parentid": 1, "order": 0 } ]
+}
