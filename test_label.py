@@ -1,3 +1,4 @@
+import allure
 import requests
 
 
@@ -13,6 +14,7 @@ class TestLabel:
         req = requests.get(url=url, params=access_token)
         self.token = req.json()['access_token']
 
+    @allure.story('test_create')
     def test_create_label(self):
         url = f"https://qyapi.weixin.qq.com/cgi-bin/tag/create?access_token={self.token}"
         data ={
@@ -22,6 +24,7 @@ class TestLabel:
         req = requests.post(url=url, json=data)
         assert req.json()['errcode'] == 0
 
+    @allure.story('test_update')
     def test_update_label_name(self):
         url = f"https://qyapi.weixin.qq.com/cgi-bin/tag/update?access_token={self.token}"
         data = {
@@ -31,10 +34,9 @@ class TestLabel:
         req = requests.post(url=url, json=data)
         assert req.json()['errcode'] == 0
 
+    @allure.story('test_delete')
     def test_delete_label(self):
         tad_id = 12
         url = f"https://qyapi.weixin.qq.com/cgi-bin/tag/delete?access_token={self.token}&tagid={tad_id}"
         req = requests.get(url=url)
         assert req.json()['errcode'] == 0
-
-    
